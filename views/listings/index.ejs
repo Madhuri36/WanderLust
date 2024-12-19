@@ -1,4 +1,4 @@
-<% layout("/layouts/boilerplate") %>
+<% layout("/layouts/boilerplate") %> <%= success %>
 <body>
   <h3>All Listings</h3>
   <!-- <form method="GET" action="/listings/new">
@@ -9,7 +9,7 @@
     <a href="/listings/<%= listing._id %>" class="listing-link">
       <div class="card col listing-card">
         <img
-          src="<%= listing.image.url %>"
+          src="<%= listing.image?.url || 'https://images.unsplash.com/photo-1625505826533-5c80aca7d157?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fGdvYXxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=800&q=60' %>"
           class="card-img-top"
           alt="listing_image"
           style="height: 20rem"
