@@ -57,6 +57,12 @@ body {
   align-items: space-evenly;
 }
 
+.navbar-collapse {
+  background-color: white; /* Set background color */
+  border: none;
+}
+
+
 /* cards */
 .listing-card{
   border: none !important;

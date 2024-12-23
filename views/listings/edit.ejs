@@ -33,7 +33,7 @@
           <label for="image" class="form-label">Image URL</label>
           <input
             name="listing[image][url]"
-            value="<%= listing.image.url %>"
+            value="<%= listing.image.url || 'https://images.unsplash.com/photo-1625505826533-5c80aca7d157?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fGdvYXxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=800&q=60' %>"
             type="text"
             class="form-control"
             placeholder="Image URL"
@@ -44,7 +44,9 @@
             name="listing[image][filename]"
             value="<%= listing.image.filename || 'listingimage' %>"
           />
-          <div class="invalid-feedback">Please enter a valid Link for Image</div>
+          <div class="invalid-feedback">
+            Please enter a valid Link for Image
+          </div>
         </div>
 
         <div class="row">
