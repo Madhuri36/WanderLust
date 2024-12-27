@@ -8,6 +8,7 @@
         action="/listings/<%= listing._id %>?_method=PUT"
         novalidate
         class="needs-validation"
+        enctype="multipart/form-data"
       >
         <div class="mb-3">
           <label for="title" class="form-label">Title</label>
@@ -28,16 +29,18 @@
           >
           <div class="invalid-feedback">Please enter a short description</div>
         </div>
+        <div class="mb-3">
+          Original Listing <br />
+          <img src="<%= originalImageUrl %>" height="250rem" />
+        </div>
 
         <div class="mb-3">
-          <label for="image" class="form-label">Image URL</label>
+          <label for="image" class="form-label">Upload New Image</label>
+          <input name="listing[image]" type="file" class="form-control" />
           <input
+            type="hidden"
             name="listing[image][url]"
-            value="<%= listing.image.url || 'https://images.unsplash.com/photo-1625505826533-5c80aca7d157?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fGdvYXxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=800&q=60' %>"
-            type="text"
-            class="form-control"
-            placeholder="Image URL"
-            required
+            value="<%= listing.image.url %>"
           />
           <input
             type="hidden"
